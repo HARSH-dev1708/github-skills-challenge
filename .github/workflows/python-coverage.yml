@@ -8,6 +8,7 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  checks: write
 
 jobs:
   coverage:
@@ -43,6 +44,6 @@ jobs:
           path: coverage.xml
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           minimum_coverage: 50
-          fail_below_min: true
+          fail_below_threshold: true
           show_line: true
           show_branch: true
